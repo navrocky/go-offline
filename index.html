@@ -1,0 +1,486 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/night.min.css"
+      id="theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/base16/monokai.min.css"
+    />
+    <link rel="stylesheet" href="css/override.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Что делать, когда нужен оффлайн?</h3>
+          <aside class="notes">
+            Хочу рассказать о необычном опыте даже для меня и почему нашей
+            команде удалось в очередной раз не писать на руби
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h3>О проекте</h3>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <h3>Требования</h3>
+            <ul>
+              <li>WEB приложение</li>
+              <li>Десктоп приложение</li>
+              <li>Windows, Linux</li>
+              <li>Операторы, модераторы, админы</li>
+              <li>Оффлайн режим</li>
+              <li>Синхронизация через флешку</li>
+            </ul>
+            <aside class="notes"></aside>
+          </section>
+          <section data-auto-animate>
+            <h3>Какие есть варианты?</h3>
+          </section>
+          <section data-auto-animate>
+            <h3>Какие есть варианты?</h3>
+            <ul>
+              <li>Писать нативно под все платформы</li>
+              <li>Писать кроссплатформенно</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <h3>Какие есть варианты?</h3>
+            <ul>
+              <li>Писать нативно под все платформы</li>
+              <ul>
+                <li>Windows UWP+XAML</li>
+                <li>Linux Qt/GTK</li>
+                <li>Web Typescript+HTML+CSS</li>
+                <li>Server Ruby, Go, Kotlin...</li>
+              </ul>
+              <li>Писать кроссплатформенно</li>
+            </ul>
+            <aside class="notes">У нас нет столько людей и времени</aside>
+          </section>
+          <section data-auto-animate>
+            <h3>Какие есть варианты?</h3>
+            <ul>
+              <li>Писать нативно под все платформы</li>
+              <li>Писать кроссплатформенно</li>
+              <ul>
+                <li>Qt</li>
+                <li>Flutter</li>
+                <li>Compose Multiplatform</li>
+                <li>Typescript+HTML+CSS+ElectronJS</li>
+              </ul>
+            </ul>
+            <aside class="notes">
+              Qt, Flutter нет нормального web. Compose очень интересно и
+              перспективно, все на Kotlin, однако десктоп на JVM.
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h3>Побеждает</h3>
+            <ul>
+              <ul>
+                <li>Typescript+HTML+CSS+ElectronJS</li>
+              </ul>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h3>Инструменты</h3>
+          </section>
+          <section>
+            <h3>Typescript</h3>
+            <div class="r-stack">
+              <img
+                class="fade-in-then-out"
+                data-src="images/js_vs_ts.jpg"
+                height="400"
+              />
+              <img
+                class="fragment fade-in-then-out"
+                data-src="images/ts.png"
+                height="400"
+              />
+            </div>
+            <aside class="notes">
+              Typescript приносит типизацию и порядок в JavaScript, VSCode круто
+              дополняет и рефакторит. Структурная типизация. Видим ошибки при
+              сборке и редактировании. Кому-то может сперва показаться сложно
+              после нетипизированных языков, но потом кайфуют.
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <div>
+              <svg
+                height="150"
+                fill="currentColor"
+                class="w-full h-full"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m11.987 14.138-3.132 4.923-5.193-8.427-.012 8.822H0V4.544h3.691l5.247 8.833.005-3.998 3.044 4.759zm.601-5.761c.024-.048 0-3.784.008-3.833h-3.65c.002.059-.005 3.776-.003 3.833h3.645zm5.634 4.134a2.061 2.061 0 0 0-1.969 1.336 1.963 1.963 0 0 1 2.343-.739c.396.161.917.422 1.33.283a2.1 2.1 0 0 0-1.704-.88zm3.39 1.061c-.375-.13-.8-.277-1.109-.681-.06-.08-.116-.17-.176-.265a2.143 2.143 0 0 0-.533-.642c-.294-.216-.68-.322-1.18-.322a2.482 2.482 0 0 0-2.294 1.536 2.325 2.325 0 0 1 4.002.388.75.75 0 0 0 .836.334c.493-.105.46.36 1.203.518v-.133c-.003-.446-.246-.55-.75-.733zm2.024 1.266a.723.723 0 0 0 .347-.638c-.01-2.957-2.41-5.487-5.37-5.487a5.364 5.364 0 0 0-4.487 2.418c-.01-.026-1.522-2.39-1.538-2.418H8.943l3.463 5.423-3.379 5.32h3.54l1.54-2.366 1.568 2.366h3.541l-3.21-5.052a.7.7 0 0 1-.084-.32 2.69 2.69 0 0 1 2.69-2.691h.001c1.488 0 1.736.89 2.057 1.308.634.826 1.9.464 1.9 1.541a.707.707 0 0 0 1.066.596zm.35.133c-.173.372-.56.338-.755.639-.176.271.114.412.114.412s.337.156.538-.311c.104-.231.14-.488.103-.74z"
+                ></path>
+              </svg>
+            </div>
+            <ul>
+              <li>Генераторы проектов различного типа</li>
+              <li>Параллельное выполнение задач (сборка, линтинг, и т.д)</li>
+              <li>Кэширование результатов сборки</li>
+              <li>Расширяемость плагинами, кастомными генераторами</li>
+              <li>Интеграция с IDE (VSCode, IDEA)</li>
+            </ul>
+            <aside class="notes">
+              Используем монорепозиторий, 3 приложения, 2 общих библиотеки, дает
+              синхронность в разработке. Удобная работа с монорепозиториями.
+              Генератор файлов миграций.
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <div>
+              <svg
+                height="150"
+                fill="currentColor"
+                class="w-full h-full"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m11.987 14.138-3.132 4.923-5.193-8.427-.012 8.822H0V4.544h3.691l5.247 8.833.005-3.998 3.044 4.759zm.601-5.761c.024-.048 0-3.784.008-3.833h-3.65c.002.059-.005 3.776-.003 3.833h3.645zm5.634 4.134a2.061 2.061 0 0 0-1.969 1.336 1.963 1.963 0 0 1 2.343-.739c.396.161.917.422 1.33.283a2.1 2.1 0 0 0-1.704-.88zm3.39 1.061c-.375-.13-.8-.277-1.109-.681-.06-.08-.116-.17-.176-.265a2.143 2.143 0 0 0-.533-.642c-.294-.216-.68-.322-1.18-.322a2.482 2.482 0 0 0-2.294 1.536 2.325 2.325 0 0 1 4.002.388.75.75 0 0 0 .836.334c.493-.105.46.36 1.203.518v-.133c-.003-.446-.246-.55-.75-.733zm2.024 1.266a.723.723 0 0 0 .347-.638c-.01-2.957-2.41-5.487-5.37-5.487a5.364 5.364 0 0 0-4.487 2.418c-.01-.026-1.522-2.39-1.538-2.418H8.943l3.463 5.423-3.379 5.32h3.54l1.54-2.366 1.568 2.366h3.541l-3.21-5.052a.7.7 0 0 1-.084-.32 2.69 2.69 0 0 1 2.69-2.691h.001c1.488 0 1.736.89 2.057 1.308.634.826 1.9.464 1.9 1.541a.707.707 0 0 0 1.066.596zm.35.133c-.173.372-.56.338-.755.639-.176.271.114.412.114.412s.337.156.538-.311c.104-.231.14-.488.103-.74z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <img data-src="images/nx.png" height="400" />
+            </div>
+            <aside class="notes">
+              Используем монорепозиторий, 3 приложения, 2 общих библиотеки, дает
+              синхронность в разработке. Удобная работа с монорепозиториями.
+              Генератор файлов миграций.
+            </aside>
+          </section>
+          <section>
+            <img data-src="images/electron.png" height="100" />
+            <h3>ElectronJS</h3>
+            <ul>
+              <li>Chromium (front) и node.js (back) в одном флаконе</li>
+              <li>Front и back общаются по IPC</li>
+              <li>Поддерживается Windows, Linux, macOS</li>
+              <li>electron-builder собирает AppImage и Windows-инсталлятор</li>
+              <li>Для NX есть плагин</li>
+            </ul>
+            <aside class="notes">
+              Разработал Github для редактора Atom, первый выпуск в 2013г.
+              Другие аналоги NW.JS, neutralinojs, tauri. На Electron: vscode,
+              slack, skype, gitkraken
+            </aside>
+          </section>
+          <section>
+            <img data-src="images/typeorm.png" height="100" />
+            <h3>TypeORM</h3>
+            <ul>
+              <li>Postgres, SQLite, MySql, Mongo, MsSql, Oracle</li>
+              <li>Поддержка паттернов Data Mapper и Active Record</li>
+              <li>Query Builder</li>
+              <li>
+                Миграции, транзакции, отношения, кэширования, lazy отношения,
+                пул соединений...
+              </li>
+            </ul>
+            <aside class="notes">
+              Мощная ORM для TypeScript. Аналог Hibernate, Entity Framework. Мы
+              используем на сервере Postgres, в десктопе - sqlite
+            </aside>
+          </section>
+          <section>
+            <h3>Express.js</h3>
+            <pre><code data-trim >
+                const express = require('express')
+                const app = express()
+
+                app.get('/', (req, res) => {
+                  res.send('hello world')
+                })
+            </code></pre>
+            <div class="fragment">+ OpenAPI + Swagger UI + 🚲</div>
+            <aside class="notes">
+              Сперва был выбран NextJs, но из-за неудачного подхода к DI решил
+              использовать что-то более простое но функциональное. Поддерживает
+              различные middleware: CORS, сжатие, логирование запросов, JSON,
+              раздачу статики, обработку ошибок
+            </aside>
+          </section>
+          <section>
+            <h3>Express.js + OpenAPI + Swagger UI + 🚲</h3>
+            <ul>
+              <li>Базовый класс контроллера</li>
+              <li>Генерация кода контроллера</li>
+              <li>Генерация кода клиента</li>
+              <li>Контроллер для отображения Swagger UI</li>
+            </ul>
+            <aside class="notes">
+              Для генерации использовалась библиотека openapi-generator-plus
+            </aside>
+          </section>
+          <section>
+            <h3>Vue 3 + Vuetify</h3>
+            <ul style="list-style: none">
+              <li>➕ Поддержка TypeScript</li>
+              <li>➕ Material Design</li>
+              <li>➕ Много готовых компонентов</li>
+              <li>➕ Иконки</li>
+              <li>➖ Не идеально работает поддержка в VSCode</li>
+              <li>➖ Не везде работает типизация</li>
+              <li>➖ Нет компонентов календаря и выбора даты</li>
+            </ul>
+            <p class="fragment">Саша подтвердил что Vue 💩</p>
+            <aside class="notes">
+              Я топил за реакт, но женя сказал что реакт говно.
+            </aside>
+          </section>
+          <section>
+            <h3>Vue 3 + Vuetify</h3>
+            <video data-autoplay src="images/vuetify.mkv"></video>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <h3>Storybook</h3>
+            <ul>
+              <li>Изолированная разработка форм и компонентов</li>
+              <li>Тестирование форм по отдельности</li>
+              <li>Удобное отображение внутреннего состояния</li>
+              <li>Список всех форм и компонетов</li>
+            </ul>
+            <aside class="notes">
+              <p>Можем смотреть состояние сервисов</p>
+              <p>Открыть в отдельном окне</p>
+              <p>Проверить различные ширины экранов, темы</p>
+              <p>Проинспектировать и менять свойства компонента на лету</p>
+              <p>Смотреть в логе какие действия происходили</p>
+            </aside>
+          </section>
+          <section>
+            <h4 style="margin-bottom: 0">Storybook</h4>
+            <img data-src="images/storybook.png" height="600" />
+            <aside class="notes">
+              <p>Можем смотреть состояние сервисов</p>
+              <p>Открыть в отдельном окне</p>
+              <p>Проверить различные ширины экранов, темы</p>
+              <p>Проинспектировать и менять свойства компонента на лету</p>
+              <p>Смотреть в логе какие действия происходили</p>
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Архитектура</h3>
+          </section>
+          <section>
+            <h3>Чистая архитектура</h3>
+            <img data-src="images/clean.jpg" height="500" />
+            <aside class="notes">
+              <p>независимость от фреймворка</p>
+              <p>тестируемость</p>
+              <p>независимость от UI</p>
+              <p>независимость от БД</p>
+              <p>независимость от какого-либо внешнего сервиса</p>
+              <p>На диаграмме правило зависимостей (зависимости внутрь)</p>
+              <p>Принцип инверсии зависимостей</p>
+            </aside>
+          </section>
+          <section>
+            <h4>Уровень модели и сценариев. Интерфейсы</h4>
+            <pre><code style="font-size: 11pt; line-height: 120%;" data-trim><script type="text/template">
+              export interface User {
+                id: Id
+                email: string
+                passwordHash: string
+                surname: string
+                name: string
+                patronymic?: string
+                phone?: string
+                status: UserStatus
+                roleId: Id
+              }
+
+              export interface UsersService {
+                findAll(ctx: Context, opts?: UserFindOptions): Promise<PaginatedResult<User>>
+                findByIdNonDeleted(ctx: Context, id: Id): Promise&lt;User | undefined>
+                findByEmail(ctx: Context, email: string): Promise&lt;User | undefined>
+                findById(ctx: Context, id: Id): Promise&lt;User | undefined>
+                add(ctx: Context, opts: AddUserOpts): Promise&lt;Id>
+                update(ctx: Context, id: Id, opts: UpdateUserOpts): Promise&lt;void>
+                delete(ctx: Context, id: Id): Promise&lt;void>
+              }
+            </script></code></pre>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <h4>Уровень модели и сценариев. Реализация</h4>
+            <pre><code style="font-size: 11pt; line-height: 120%;" data-trim ><script type="text/template" lang="typescript">
+              export class DBUsersService implements UsersService {
+                constructor(private opts: {
+                  permissionsService: PermissionsService
+                  dbConnection: DBConnection
+                  idGenerator: IdGenerator
+                  usersRepository: UsersRepository
+                  rolesRepository: RolesRepository
+                  hashingService: HashingService
+                }) {
+                }
+                async add(ctx: Context, opts: AddUserOpts): Promise<Id> {...}
+                async update(ctx: Context, id: Id, opts: UpdateUserOpts): Promise<void> {...}
+                async delete(ctx: Context, id: Id): Promise<void> {...}
+                ...
+              }
+            </script></code></pre>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <h5>Уровень контроллеров, шлюзов, представлений</h5>
+            <pre><code style="font-size: 11pt; line-height: 120%;" data-trim ><script type="text/template" lang="typescript">
+              class TypeOrmDBConnection implements DBConnection {...}
+
+              class TypeOrmUsersRepository implements UsersRepository {...}
+
+              class RemoteRolesService implements RolesService {...}
+
+              class BCryptHashingService implements HashingService {...}
+
+              class UsersController implements UsersApi, BaseController {
+                constructor(private opts: { 
+                  usersService: UsersService; 
+                  controlQuestionsService: ControlQuestionsService 
+                }) {}
+                async usersAdd(req: HttpRequest, request: Api.AddUser): Promise<UsersAddResponse> {...}
+                ...
+              }
+              
+              // Vue компонент
+              <users-form
+                :roles-service="rolesService"
+                :auth-service="authService"
+                :control-questions-service="controlQuestionsService"
+                :loading="loading"
+                @submit="createUser"
+              />
+            </script></code></pre>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <h3>Структура проекта</h3>
+            <pre><code style="font-size: 11pt; line-height: 120%;" data-trim ><script type="text/template" lang="typescript">
+              📁 apps
+                📁 server
+                📁 web-app-vue
+                📁 electron-app-vue
+                📁 electron-vue
+              📁 libs
+                📁 apps-vue
+                📁 core
+                  📁 common
+                  📁 features
+                    📁 authorization
+                    📁 salesPoints
+                    📁 roles
+                    📁 users
+                      📁 presentation
+                        📄 UsersPage.vue
+                        📄 usersController.vue
+                      📁 domain
+                        📄 users.ts
+                        📄 dbUsersService.ts
+                        📄 remoteUsersService.ts
+                        📄 ipcUsersService.ts
+                      📁data
+                        📄 typeOrmUsersRepository.ts
+                        📄 mockedUsersRepository.ts
+          </script></code></pre>
+            <aside class="notes">
+              Большой комок грязи (big ball of mood). feature sliced design
+              архитектурная методология. Основная идея: сделать проект понятным
+              и структурированным, особенно в условиях регулярного изменения
+              требований бизнеса. разделение по фичам, затем по слоям (feature
+              sliced). Это позволяет меньше перемещаться по древу файлов при
+              разработке какой-то определенной фичи.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Синхронизация</h3>
+          </section>
+          <section>
+            <h3>Event sourcing</h3>
+            <ul style="list-style: none">
+              <li>✅ Хранение исходных данных в виде цепочки событий</li>
+              <li>✅ Возможность вернуться к любому месту в истории</li>
+              <li>✅ Бесплатный журнал аудита</li>
+              <li>
+                ❌ Чтобы получить определенную или текущую версию объекта надо
+                переисполнить события
+              </li>
+            </ul>
+            <p class="fragment">💪 На помощь приходят проекции</p>
+            <aside class="notes">
+              Event Sourcing — это архитектурный шаблон, подход для хранения
+              данных в виде событий.
+            </aside>
+          </section>
+          <section>
+            <h3>События</h3>
+            <img data-src="images/events.svg" height="500" />
+            <aside class="notes">
+              Можно провести аналогию с Git: события это коммиты
+            </aside>
+          </section>
+          <section>
+            <h3>Синхронизация</h3>
+            <img data-src="images/synchronization.svg" height="500" />
+            <aside class="notes">
+              Также возможны конфликты на логическом уровне. Данный факт определяется в EventProcessor и создается компенсация.
+              Рассказать про дельта синхронизацию.
+              Рассказать про выгрузку на флешку.
+            </aside>
+          </section>
+          <section>
+            <h3>Шардирование</h3>
+            <img data-src="images/synchronization.svg" height="500" />
+            <aside class="notes">
+              
+            </aside>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        plugins: [RevealMarkdown, RevealNotes, RevealHighlight],
+        slideNumber: true,
+        autoAnimate: true,
+        transition: "slide",
+        // backgroundTransition: 'concave',
+        overview: true,
+        // view: 'scroll',
+        // scrollProgress: true
+      });
+    </script>
+  </body>
+</html>
